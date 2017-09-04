@@ -16,7 +16,7 @@ function initMap() {
             };
 
             var marker2 = new google.maps.Marker({
-                position: pos,
+                position: {lat: 59.4024341, lng: 17.946482400000036},
                 map: map,
                 icon: marker(url, s(20, 17), p(10, 8))
             });
@@ -28,6 +28,14 @@ function initMap() {
         // Browser doesn't support Geolocation
         handleLocationError(false, infoWindow, map.getCenter());
     }
+    var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+    var markers = locations.map(function(location, i) {
+        return new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length]
+        });
+    });
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -43,3 +51,7 @@ function ll(y, x) { return new google.maps.LatLng(y, x); }
 function marker(url, size, hotspot, origin) {
     return new google.maps.MarkerImage(url, size, origin || p(0, 0), hotspot);
 }
+var locations = [
+    {lat: 59.36887909999999, lng: 18.008433400000058},
+    {lat: 59.36295999999999, lng: 18.146800100000064}
+];
