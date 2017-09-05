@@ -4,8 +4,7 @@ var map, infoWindow,
 function initMap() {
     var toiletList = [];
     var iconBase = {
-        url: 'pictures\\1.png',
-        size: new google.maps.Size(100, 100)
+        url: 'pictures\\1.png'
     };
 
     var icons = {
@@ -26,14 +25,14 @@ function initMap() {
         success: function (response) {
             for (var i = 0; i < response.length; i++) {
                 toiletList.push(new google.maps.Marker({
-                        title: response[i].address,
-                        position: {
-                            lat: response[i].latitude,
-                            lng: response[i].longitude
-                        },
-                        map: map,
+                    title: response[i].address,
+                    position: {
+                        lat: response[i].latitude,
+                        lng: response[i].longitude
+                    },
+                    map: map,
                     icon: iconBase
-            }));
+                }));
             }
             console.log(toiletList[2]);
         }
