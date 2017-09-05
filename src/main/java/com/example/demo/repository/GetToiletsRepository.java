@@ -26,7 +26,7 @@ public class GetToiletsRepository implements ToiletsRepository {
     public List<Toilets> listToilets() {
         try (Connection conn = dataSource.getConnection();
              Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery("SELECT Index, Address, Latitude, Longitude FROM PublicToilets")) {
+             ResultSet rs = stmt.executeQuery("SELECT * FROM PublicToilets")) {
             List<Toilets> toilets = new ArrayList<>();
             while (rs.next()) toilets.add(rsToilet(rs));
             return toilets;
