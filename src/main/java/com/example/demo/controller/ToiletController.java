@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class toiletController {
+public class ToiletController {
 
     @GetMapping("/")
-    public ModelAndView index() {
+    public ModelAndView Googlemaps() {
         return new ModelAndView("Googlemaps");
     }
 }
