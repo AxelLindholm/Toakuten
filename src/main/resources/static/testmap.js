@@ -3,7 +3,11 @@ var map, infoWindow,
 
 function initMap() {
     var toiletList = [];
-    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+    var iconBase = {
+        url: 'pictures\\1.png',
+        size: new google.maps.Size(100, 100)
+    };
+
     var icons = {
         parking: {
             icon: iconBase + 'parking_lot_maps.png'
@@ -22,14 +26,14 @@ function initMap() {
         success: function (response) {
             for (var i = 0; i < response.length; i++) {
                 toiletList.push(new google.maps.Marker({
-                    title: response[i].index,
-                    position: {
-                        lat: response[i].latitude,
-                        lng: response[i].longitude
-                    },
-                    map: map,
-                    icon: icons.parking.icon
-                }));
+                        title: response[i].address,
+                        position: {
+                            lat: response[i].latitude,
+                            lng: response[i].longitude
+                        },
+                        map: map,
+                    icon: iconBase
+            }));
             }
             console.log(toiletList[2]);
         }
