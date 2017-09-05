@@ -9,16 +9,16 @@ function initMap() {
         type: "get",
         success: function (response) {
             for (var i = 0; i < response.length; i++) {
-                toiletList.push(response[i].index);
-                new google.maps.Marker({
+                toiletList.push(new google.maps.Marker({
+                    title: response[i].index,
                     position: {
                         lat: response[i].latitude,
                         lng: response[i].longitude
                     },
                     map: map
-                });
+                }));
             }
-            console.log(toiletList);
+            console.log(toiletList[2]);
         }
     });
 
