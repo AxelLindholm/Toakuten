@@ -29,15 +29,7 @@ function initMap() {
         handleLocationError(false, infoWindow, map.getCenter());
     }
     var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
-    var markers = locations.map(function(location, i) {
-        return new google.maps.Marker({
-            position: location,
-            label: labels[i % labels.length]
-        });
-    });
 }
-
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
     infoWindow.setContent(browserHasGeolocation ?
