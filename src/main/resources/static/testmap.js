@@ -42,7 +42,7 @@ function initMap() {
                     animation: google.maps.Animation.DROP
 
                 }));
-
+//tjoho
                 var stringContent = response[i].address;
                 var infowindow = new google.maps.InfoWindow({
                     content: stringContent,
