@@ -18,7 +18,7 @@ function initMap() {
             icon: iconBase + 'info-i_maps.png'
         }
     };
-
+    var count = 0;
 
 //Get toilet coords from database and put them on the map
     $.ajax({
@@ -27,6 +27,10 @@ function initMap() {
 
         success: function (response) {
             for (var i = 0; i < response.length; i++) {
+                count = Number(response[i].isHandicap) + Number(response[i].hasChangingTable) + Number(response[i].mustPay);
+                console.log(response[i].isHandicap);
+                console.log(response[i].latitude);
+                console.log(count);
                 toiletList.push(new google.maps.Marker({
                     title: response[i].address,
                     position: {
@@ -40,12 +44,11 @@ function initMap() {
                 }));
 
                 var stringContent = response[i].address;
-
                 var infowindow = new google.maps.InfoWindow({
                     content: stringContent,
                     maxWidth: 200
                 });
-                bindInfowindowWithMarker(toiletList, infowindow, i);
+                bindInfowindowWithMarker(toiletList, infowindow, i, response);
             }
             var markerCluster = new MarkerClusterer(map, toiletList,
                 {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
@@ -80,11 +83,11 @@ function initMap() {
     }
 }
 
-function bindInfowindowWithMarker(listOfToilets, infowindow, index){
+function bindInfowindowWithMarker(listOfToilets, infowindow, index, response){
     google.maps.event.addListener(listOfToilets[index], 'click', function () {
         infowindow.open(map, this);
-        setTimeout(function () { infowindow.close(); }, 5000);
-
+        setTimeout(function () { infowindow.close(); }, 3000);
+        $(".content").html(response[index].address);
     });
 }
 

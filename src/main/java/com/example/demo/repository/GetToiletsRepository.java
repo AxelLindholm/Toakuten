@@ -20,6 +20,9 @@ public class GetToiletsRepository implements ToiletsRepository {
         toilet.setAddress(rs.getString("Address"));
         toilet.setLatitude(rs.getFloat("Latitude"));
         toilet.setLongitude(rs.getFloat("Longitude"));
+        toilet.setHasChangingTable(rs.getInt("HasChangingTable"));
+        toilet.setMustPay(rs.getInt("MustPay"));
+        toilet.setIsHandicap(rs.getInt("IsHandicap"));
         return toilet;
     }
 

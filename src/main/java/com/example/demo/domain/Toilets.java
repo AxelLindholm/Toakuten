@@ -5,15 +5,46 @@ public class Toilets {
     private String address;
     private float latitude;
     private float longitude;
+    private int isHandicap;
+    private int mustPay;
+    private int hasChangingTable;
+
+    public int getIsHandicap() {
+        return isHandicap;
+    }
+
+    public void setIsHandicap(int isHandicap) {
+        this.isHandicap = isHandicap;
+    }
+
+    public int getMustPay() {
+        return mustPay;
+    }
+
+    public void setMustPay(int mustPay) {
+        this.mustPay = mustPay;
+    }
+
+    public int getHasChangingTable() {
+        return hasChangingTable;
+    }
+
+    public void setHasChangingTable(int hasChangingTable) {
+        this.hasChangingTable = hasChangingTable;
+    }
 
     public Toilets() {
 
     }
-    public Toilets(String index, String address, float latitude, float longitude){
+
+    public Toilets(String index, String address, float latitude, float longitude, int isHandicap, int mustPay, int hasChangingTable) {
         this.index = index;
         this.address = address;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.isHandicap = isHandicap;
+        this.mustPay = mustPay;
+        this.hasChangingTable = hasChangingTable;
     }
 
     public String getIndex() {
