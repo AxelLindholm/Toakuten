@@ -19,10 +19,12 @@ function initMap() {
         }
     };
 
+
 //Get toilet coords from database and put them on the map
     $.ajax({
         url: "/markers",
         type: "get",
+
         success: function (response) {
             for (var i = 0; i < response.length; i++) {
                 toiletList.push(new google.maps.Marker({
@@ -32,13 +34,21 @@ function initMap() {
                         lng: response[i].longitude
                     },
                     map: map,
-                    icon: iconBase
+                    icon: iconBase,
+                    animation: google.maps.Animation.DROP
+
                 }));
+
+                var stringContent = response[i].address;
+
+                var infowindow = new google.maps.InfoWindow({
+                    content: stringContent,
+                    maxWidth: 200
+                });
+                bindInfowindowWithMarker(toiletList, infowindow, i);
             }
-            console.log(toiletList[2]);
             var markerCluster = new MarkerClusterer(map, toiletList,
                 {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-
         }
     });
 // Map styling
@@ -69,6 +79,15 @@ function initMap() {
         handleLocationError(false, infoWindow, map.getCenter());
     }
 }
+
+function bindInfowindowWithMarker(listOfToilets, infowindow, index){
+    google.maps.event.addListener(listOfToilets[index], 'click', function () {
+        infowindow.open(map, this);
+        setTimeout(function () { infowindow.close(); }, 5000);
+
+    });
+}
+
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
     infoWindow.setContent(browserHasGeolocation ?
