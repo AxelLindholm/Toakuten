@@ -55,10 +55,10 @@ html, body {
 body {
     margin: 0;
     background: #fff;
-    font-family: "Century Gothic", helvetica, arial, sans-serif;
+    font-family: Verdana, sans-serif;
     font-size: 1.1em;
 }
-header, nav, section, footer {
+header, nav, section {
     padding: 10px;
     margin: 0;
     border: 2px solid #fff;
@@ -70,7 +70,7 @@ header {
     text-align: center;
 }
 nav {
-    background: orange;
+    background: #bde2ec;
 }
 nav a {
     display: block;
@@ -83,7 +83,85 @@ section {
     background: #01439C;
 }
 footer {
-    background: olivedrab;
+    background: #bde2ec;
     text-align: center;
 }
 /*Meny*/
+
+.transition {
+    transition: all 0.25s ease-in-out;
+}
+
+body {
+    height: 100%;
+    background-color: #F2EBE2;
+    font-family: 'Verdana';
+    font-weight: 400;
+    text-align: center;
+}
+
+   .container {
+       list-style: none;
+       padding: 0;
+       margin: 0 5%;
+       width: auto;
+       display: flex;
+       flex-flow: row nowrap;
+       justify-content: center;
+   }
+
+   .item {
+       font-family: 'verdana', serif;
+       border-left: 1px solid #F2EBE2;
+   }
+
+a {text-transform: uppercase;
+    font-size: 0.7em;
+    background: #F2EBE2;
+    color: #01439C;
+    padding: 1em 1em;
+    display: block;
+    text-decoration: none;
+@extend . transition;}
+
+
+a:hover {
+    background: #01439C;
+    color: white;
+}
+
+.item-1 {
+    border: none;
+}
+
+@media ( max-width: 600px) {
+    .container {
+        flex-flow: column nowrap;
+    }
+
+    .item {
+        border-left: none;
+        border-bottom: 1px solid grey;
+    }
+
+    a {
+        padding: 1.5em 1em;
+    }
+}
+
+
+/* responive - for screens smaller than 600px
+@media ( max-width: 600px) {
+    .container {
+        flex-flow: column nowrap;
+
+    .item {
+        border-left: none;
+        border-bottom: 1px solid $grey;
+
+    a {
+        padding: 1.5em 1em;
+    }
+}
+}
+}*/
