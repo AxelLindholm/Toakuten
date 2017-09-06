@@ -37,7 +37,6 @@ function initMap() {
             console.log(toiletList[2]);
         }
     });
-
     var uluru = {lat: 0, lng: 0},
         map = new google.maps.Map(document.getElementById('map'), {
             center: uluru,
