@@ -1,5 +1,6 @@
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
+
 #map {
     height: 100%;
 }
@@ -65,7 +66,7 @@ header, nav, section, footer {
     color: #fff;
 }
 header {
-    background: dodgerblue;
+    background: #bde2ec;
     text-align: center;
 }
 nav {
@@ -85,3 +86,4 @@ footer {
     background: olivedrab;
     text-align: center;
 }
+/*Meny*/
