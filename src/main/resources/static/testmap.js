@@ -19,6 +19,7 @@ function initMap() {
         }
     };
 
+//Get toilet coords from database and put them on the map
     $.ajax({
         url: "/markers",
         type: "get",
@@ -35,15 +36,19 @@ function initMap() {
                 }));
             }
             console.log(toiletList[2]);
+            var markerCluster = new MarkerClusterer(map, toiletList,
+                {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+
         }
     });
+// Map styling
     var uluru = {lat: 0, lng: 0},
         map = new google.maps.Map(document.getElementById('map'), {
             center: uluru,
             zoom: 14
         });
     infoWindow = new google.maps.InfoWindow;
-
+//Get user position
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
             var pos = {
