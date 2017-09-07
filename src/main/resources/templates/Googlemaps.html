@@ -7,33 +7,37 @@
     <link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
-<ul class="container">
+<!-- Toggle sidebar -->
+<div class="main-wrap">
 
-    <li class="item item-1"><a href="#">About us</a></li>
-    <li class="item item-2"><a href="#">Behövs denna?</a></li>
-    <li class="item item-3"><a href="#">Den här då?</a></li>
-    <li class="item item-4"><a href="#">Har en till för test</a></li>
-</ul>
+    <input id="slide-sidebar" type="checkbox" role="button"/>
+    <label for="slide-sidebar"><span>mer info</span></label>
+    <div class="sidebar">
+        <h1>Information</h1>
+        <div class ="address"></div>
+        <div class ="changingtable"></div>
+        <div class ="mustpay"></div>
+        <div class ="ishandicap"></div>
+        <div class ="hours"></div>
+    </div>
+    <div class="portfolio">
+        <header>
+            <figure>
+                <img src="pictures\headerbild.png" alt="headerbild"/>
+            </figure>
+        </header>
+        <!-- /wrapper -->
+        <div id="map"></div>
+        <script src="/jquery-3.2.1.js"></script>
+        <script src="/testmap.js"></script>
+        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUh1v05Ve5mkR0CPUor23IAhFDCwi9OE4&amp;callback=initMap"></script>
 
-<header>
-    <!-- header -->
-    <figure>
-        <img src="pictures\headerbild.png" alt="headerbild"/>
-    </figure>
-    <!-- menu container -->
-</header>
- <!-- /wrapper -->
-<div id="map"></div>
-<script src="/jquery-3.2.1.js"></script>
-<script src="/testmap.js"></script>
-<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUh1v05Ve5mkR0CPUor23IAhFDCwi9OE4&amp;callback=initMap"></script>
-<div class ="address"></div>
-<div class ="changingtable"></div>
-<div class ="mustpay"></div>
-<div class ="ishandicap"></div>
-<div class ="hours"></div>
+    </div>
+</div>
+
+
 </body>
 </html>
 
