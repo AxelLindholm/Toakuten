@@ -115,7 +115,7 @@ function initMap() {
                     maxWidth: 200
                 });
                 bindInfowindowWithMarker(toiletList, infowindow, i, response);
-                getTrueOrFalse(toiletList,i, changingTable, isHandicap, mustPay);
+                getTrueOrFalse(toiletList,i, mustPay, isHandicap, changingTable);
             }
             var markerCluster = new MarkerClusterer(map, toiletList,
                 {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
@@ -156,7 +156,7 @@ function bindInfowindowWithMarker(listOfToilets, infowindow, index, response) {
         setTimeout(function () {
             infowindow.close();
         }, 3000);
-        $(".content").html(response[index].address);
+        $(".address").html(response[index].address);
     });
 }
 function getTrueOrFalse(listOfToilets, index, mustPay, isHandicap, hasChangingTable) {
