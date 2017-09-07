@@ -162,6 +162,7 @@ function bindInfowindowWithMarker(listOfToilets, infowindow, index, response) {
 }
 function getTrueOrFalse(listOfToilets, index, mustPay, isHandicap, hasChangingTable) {
     google.maps.event.addListener(listOfToilets[index], 'click', function () {
+
         switch(mustPay){
             case true:
                 $(".mustpay").text("Pris: 5kr");
