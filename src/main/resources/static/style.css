@@ -101,7 +101,7 @@ footer {
     left: 0;
     bottom: 0;
      border-radius: 10px;
-    color: #01439c;
+    color: #ffffff;
 }
 .portfolio {
     background-color: #bce3ec;
@@ -111,7 +111,6 @@ footer {
     right: 0;
     bottom: 0;
     border-radius: 10px;
-    //color: #fff;
 
     -moz-transition: left 0.5s ease;
     transition: left 0.5s ease;
@@ -134,9 +133,8 @@ label {
     position: absolute;
     top: 0;
     left: 150px;
-    background-color: blue;
+
 
     -moz-transition: left 0.5s ease;
     transition: left 0.5s ease;
 }
-

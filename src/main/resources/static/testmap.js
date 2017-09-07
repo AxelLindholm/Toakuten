@@ -221,3 +221,7 @@ function ll(y, x) {
 function marker(url, size, hotspot, origin) {
     return new google.maps.MarkerImage(url, size, origin || p(0, 0), hotspot);
 }
+//Hamburger button
+$(".menu").click(function() {
+    $('.menu').toggleClass('open');
+});
