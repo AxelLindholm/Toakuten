@@ -3,19 +3,33 @@ var map, infoWindow,
 
 function initMap() {
     var toiletList = [];
-    var iconBase = {
-        url: 'pictures\\1.png'
-    };
-
     var icons = {
-        parking: {
-            icon: iconBase + 'parking_lot_maps.png'
+        zero: {
+            icon: 'pictures\\0.png'
         },
-        library: {
-            icon: iconBase + 'library_maps.png'
+        one: {
+            icon: 'pictures\\1.png'
         },
-        info: {
-            icon: iconBase + 'info-i_maps.png'
+        three: {
+            icon: 'pictures\\3.png'
+        },
+        four: {
+            icon: 'pictures\\4.png'
+        },
+        five: {
+            icon: 'pictures\\5.png'
+        },
+        six: {
+            icon: 'pictures\\6.png'
+        },
+        eight: {
+            icon: 'pictures\\8.png'
+        },
+        nine: {
+            icon: 'pictures\\9.png'
+        },
+        broken: {
+            icon: 'pictures\\trasig.png'
         }
     };
     var count = 0;
@@ -27,10 +41,64 @@ function initMap() {
 
         success: function (response) {
             for (var i = 0; i < response.length; i++) {
-                count = Number(response[i].isHandicap) + Number(response[i].hasChangingTable) + Number(response[i].mustPay);
-                console.log(response[i].isHandicap);
-                console.log(response[i].latitude);
-                console.log(count);
+                var changingTable, mustPay, isHandicap;
+                var toiletIcon;
+                count = response[i].isHandicap + response[i].hasChangingTable + response[i].mustPay;
+                switch (count) {
+                    case 0:
+                        toiletIcon = icons.zero.icon;
+                        changingTable = false;
+                        mustPay = false;
+                        isHandicap = false;
+                        break;
+                    case 1:
+                        toiletIcon = icons.one.icon;
+                        changingTable = false;
+                        mustPay = false;
+                        isHandicap = true;
+                        break;
+                    case 3:
+                        toiletIcon = icons.three.icon;
+                        changingTable = true;
+                        mustPay = false;
+                        isHandicap = false;
+                        break;
+                    case 4:
+                        toiletIcon = icons.four.icon;
+                        changingTable = true;
+                        mustPay = false;
+                        isHandicap = true;
+                        break;
+                    case 5:
+                        toiletIcon = icons.five.icon;
+                        changingTable = false;
+                        mustPay = true;
+                        isHandicap = false;
+                        break;
+                    case 6:
+                        toiletIcon = icons.six.icon;
+                        changingTable = false;
+                        mustPay = true;
+                        isHandicap = true;
+                        break;
+                    case 8:
+                        toiletIcon = icons.eight.icon;
+                        changingTable = true;
+                        mustPay = true;
+                        isHandicap = false;
+                        break;
+                    case 9:
+                        toiletIcon = icons.nine.icon;
+                        changingTable = true;
+                        mustPay = true;
+                        isHandicap = true;
+                        break;
+                    default:
+                        toiletIcon = icons.broken.icon;
+                        changingTable = false;
+                        mustPay = false;
+                        isHandicap = false;
+                }
                 toiletList.push(new google.maps.Marker({
                     title: response[i].address,
                     position: {
@@ -38,17 +106,16 @@ function initMap() {
                         lng: response[i].longitude
                     },
                     map: map,
-                    icon: iconBase,
+                    icon: toiletIcon,
                     animation: google.maps.Animation.DROP
-
                 }));
-//tjoho
                 var stringContent = response[i].address;
                 var infowindow = new google.maps.InfoWindow({
                     content: stringContent,
                     maxWidth: 200
                 });
                 bindInfowindowWithMarker(toiletList, infowindow, i, response);
+                getTrueOrFalse(toiletList,i, changingTable, isHandicap, mustPay);
             }
             var markerCluster = new MarkerClusterer(map, toiletList,
                 {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
@@ -83,11 +150,41 @@ function initMap() {
     }
 }
 
-function bindInfowindowWithMarker(listOfToilets, infowindow, index, response){
+function bindInfowindowWithMarker(listOfToilets, infowindow, index, response) {
     google.maps.event.addListener(listOfToilets[index], 'click', function () {
         infowindow.open(map, this);
-        setTimeout(function () { infowindow.close(); }, 3000);
+        setTimeout(function () {
+            infowindow.close();
+        }, 3000);
         $(".content").html(response[index].address);
+    });
+}
+function getTrueOrFalse(listOfToilets, index, mustPay, isHandicap, hasChangingTable) {
+    google.maps.event.addListener(listOfToilets[index], 'click', function () {
+        switch(mustPay){
+            case true:
+                $(".mustpay").text("betala");
+                break;
+            case false:
+                $(".mustpay").text("gratis");
+                break;
+        }
+        switch(isHandicap){
+            case true:
+                $(".ishandicap").text("handikappvänlig");
+                break;
+            case false:
+                $(".ishandicap").text("ej handikappvänlig");
+                break;
+        }
+        switch(hasChangingTable){
+            case true:
+                $(".changingtable").text("har skötbord");
+                break;
+            case false:
+                $(".changingtable").text("har ej skötbord");
+                break;
+        }
     });
 }
 
