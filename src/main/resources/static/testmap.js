@@ -131,7 +131,7 @@ function initMap() {
     var uluru = {lat: 0, lng: 0},
         map = new google.maps.Map(document.getElementById('map'), {
             center: uluru,
-            zoom: 14
+            zoom: 11
         });
     infoWindow = new google.maps.InfoWindow;
 //Get user position
