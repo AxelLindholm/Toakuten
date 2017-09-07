@@ -34,8 +34,8 @@ function initMap() {
     };
     var count = 0;
     var checkboxes = document.getElementsByTagName('input');
-    for (var i=0; i<checkboxes.length; i++)  {
-        if (checkboxes[i].type == 'checkbox')   {
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].type == 'checkbox') {
             checkboxes[i].checked = true;
         }
     }
@@ -121,7 +121,7 @@ function initMap() {
                     maxWidth: 200
                 });
                 bindInfowindowWithMarker(toiletList, infowindow, i, response);
-                getTrueOrFalse(toiletList,i, mustPay, isHandicap, changingTable);
+                getTrueOrFalse(toiletList, i, mustPay, isHandicap, changingTable);
             }
             var markerCluster = new MarkerClusterer(map, toiletList,
                 {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
@@ -169,12 +169,13 @@ function bindInfowindowWithMarker(listOfToilets, infowindow, index, response) {
 function getTrueOrFalse(listOfToilets, index, mustPay, isHandicap, hasChangingTable) {
     google.maps.event.addListener(listOfToilets[index], 'click', function () {
         var checkboxes = document.getElementsByTagName('input');
-        for (var i=0; i<checkboxes.length; i++)  {
-            if (checkboxes[i].type == 'checkbox')   {
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].type == 'checkbox') {
+
                 checkboxes[i].checked = false;
             }
         }
-        switch(mustPay){
+        switch (mustPay) {
             case true:
                 $(".mustpay").text("Pris: 5kr");
                 break;
@@ -182,7 +183,7 @@ function getTrueOrFalse(listOfToilets, index, mustPay, isHandicap, hasChangingTa
                 $(".mustpay").text("Pris: 0kr");
                 break;
         }
-        switch(isHandicap){
+        switch (isHandicap) {
             case true:
                 $(".ishandicap").text("Handikappvänlig: Ja");
                 break;
@@ -190,7 +191,7 @@ function getTrueOrFalse(listOfToilets, index, mustPay, isHandicap, hasChangingTa
                 $(".ishandicap").text("Handikappvänlig: Nej");
                 break;
         }
-        switch(hasChangingTable){
+        switch (hasChangingTable) {
             case true:
                 $(".changingtable").text("Skötbord: Ja");
                 break;
