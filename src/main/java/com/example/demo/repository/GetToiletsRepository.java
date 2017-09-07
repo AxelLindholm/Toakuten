@@ -23,6 +23,7 @@ public class GetToiletsRepository implements ToiletsRepository {
         toilet.setHasChangingTable(rs.getInt("HasChangingTable"));
         toilet.setMustPay(rs.getInt("MustPay"));
         toilet.setIsHandicap(rs.getInt("IsHandicap"));
+        toilet.setHours(rs.getString("Hours"));
         return toilet;
     }
 

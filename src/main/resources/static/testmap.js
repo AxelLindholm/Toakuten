@@ -155,34 +155,35 @@ function bindInfowindowWithMarker(listOfToilets, infowindow, index, response) {
         infowindow.open(map, this);
         setTimeout(function () {
             infowindow.close();
-        }, 3000);
-        $(".address").html(response[index].address);
+        }, 2000);
+        $(".address").html('<span>Adressen till denna toa är: </span>' + (response[index].address));
+        $(".hours").html('<span>Öppettider: </span>' + response[index].hours);
     });
 }
 function getTrueOrFalse(listOfToilets, index, mustPay, isHandicap, hasChangingTable) {
     google.maps.event.addListener(listOfToilets[index], 'click', function () {
         switch(mustPay){
             case true:
-                $(".mustpay").text("betala");
+                $(".mustpay").text("Pris: 5kr");
                 break;
             case false:
-                $(".mustpay").text("gratis");
+                $(".mustpay").text("Gratis");
                 break;
         }
         switch(isHandicap){
             case true:
-                $(".ishandicap").text("handikappvänlig");
+                $(".ishandicap").text("Denna toa är handikappvänlig");
                 break;
             case false:
-                $(".ishandicap").text("ej handikappvänlig");
+                $(".ishandicap").text("Denna toa är ej handikappvänlig");
                 break;
         }
         switch(hasChangingTable){
             case true:
-                $(".changingtable").text("har skötbord");
+                $(".changingtable").text("Denna toa har skötbord");
                 break;
             case false:
-                $(".changingtable").text("har ej skötbord");
+                $(".changingtable").text("Denna toa har ej skötbord");
                 break;
         }
     });

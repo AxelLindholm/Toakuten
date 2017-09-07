@@ -8,6 +8,15 @@ public class Toilets {
     private int isHandicap;
     private int mustPay;
     private int hasChangingTable;
+    private String hours;
+
+    public String getHours() {
+        return hours;
+    }
+
+    public void setHours(String hours) {
+        this.hours = hours;
+    }
 
     public int getIsHandicap() {
         return isHandicap;
@@ -37,7 +46,7 @@ public class Toilets {
 
     }
 
-    public Toilets(String index, String address, float latitude, float longitude, int isHandicap, int mustPay, int hasChangingTable) {
+    public Toilets(String index, String address, float latitude, float longitude, int isHandicap, int mustPay, int hasChangingTable, String hours) {
         this.index = index;
         this.address = address;
         this.latitude = latitude;
@@ -45,6 +54,7 @@ public class Toilets {
         this.isHandicap = isHandicap;
         this.mustPay = mustPay;
         this.hasChangingTable = hasChangingTable;
+        this.hours = hours;
     }
 
     public String getIndex() {
