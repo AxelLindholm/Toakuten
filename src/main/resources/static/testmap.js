@@ -33,6 +33,12 @@ function initMap() {
         }
     };
     var count = 0;
+    var checkboxes = document.getElementsByTagName('input');
+    for (var i=0; i<checkboxes.length; i++)  {
+        if (checkboxes[i].type == 'checkbox')   {
+            checkboxes[i].checked = true;
+        }
+    }
 
 //Get toilet coords from database and put them on the map
     $.ajax({
@@ -162,7 +168,12 @@ function bindInfowindowWithMarker(listOfToilets, infowindow, index, response) {
 }
 function getTrueOrFalse(listOfToilets, index, mustPay, isHandicap, hasChangingTable) {
     google.maps.event.addListener(listOfToilets[index], 'click', function () {
-
+        var checkboxes = document.getElementsByTagName('input');
+        for (var i=0; i<checkboxes.length; i++)  {
+            if (checkboxes[i].type == 'checkbox')   {
+                checkboxes[i].checked = false;
+            }
+        }
         switch(mustPay){
             case true:
                 $(".mustpay").text("Pris: 5kr");
