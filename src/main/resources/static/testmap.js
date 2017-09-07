@@ -156,7 +156,7 @@ function bindInfowindowWithMarker(listOfToilets, infowindow, index, response) {
         setTimeout(function () {
             infowindow.close();
         }, 2000);
-        $(".address").html('<span>Adressen till denna toa är: </span>' + (response[index].address));
+        $(".address").html('<span>Adress: </span>' + (response[index].address));
         $(".hours").html('<span>Öppettider: </span>' + response[index].hours);
     });
 }
@@ -167,23 +167,23 @@ function getTrueOrFalse(listOfToilets, index, mustPay, isHandicap, hasChangingTa
                 $(".mustpay").text("Pris: 5kr");
                 break;
             case false:
-                $(".mustpay").text("Gratis");
+                $(".mustpay").text("Pris: 0kr");
                 break;
         }
         switch(isHandicap){
             case true:
-                $(".ishandicap").text("Denna toa är handikappvänlig");
+                $(".ishandicap").text("Handikappvänlig: Ja");
                 break;
             case false:
-                $(".ishandicap").text("Denna toa är ej handikappvänlig");
+                $(".ishandicap").text("Handikappvänlig: Nej");
                 break;
         }
         switch(hasChangingTable){
             case true:
-                $(".changingtable").text("Denna toa har skötbord");
+                $(".changingtable").text("Skötbord: Ja");
                 break;
             case false:
-                $(".changingtable").text("Denna toa har ej skötbord");
+                $(".changingtable").text("Skötbord: Nej");
                 break;
         }
     });
