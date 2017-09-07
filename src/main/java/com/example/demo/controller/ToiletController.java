@@ -6,7 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ToiletController {
-
+    //Woho
     @GetMapping("/")
     public ModelAndView Googlemaps() {
         return new ModelAndView("Googlemaps");
