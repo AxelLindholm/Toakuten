@@ -7,28 +7,31 @@
     <link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
-<!-- Toggle sidebar -->
-<div class="main-wrap">
 
+<div class="main-wrap">
+    <!-- Toggle sidebar -->
     <input type="checkbox" id="toggle"/>
-    <label for="toggle"><span style="color:#BCE3EC">Stäng</span></label>
     <div class="sidebar">
-        <h1>Information</h1>
+        <label for="toggle"><span style="visibility: collapse">Stäng</span></label>
+        <div class ="Information"></div>
         <div class ="address"></div>
         <div class ="changingtable"></div>
         <div class ="mustpay"></div>
         <div class ="ishandicap"></div>
         <div class ="hours"></div>
-        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-        <img src="pictures\gruppbild.png" alt="gruppbild"/>
+        <!--<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <img src="pictures\gruppbild.png" alt="gruppbild"/> -->
+
+        <!-- /wrapper -->
     </div>
     <div class="portfolio">
+
         <header>
             <figure>
                 <img src="pictures\headerbild.png" alt="headerbild"/>
             </figure>
         </header>
-        <!-- /wrapper -->
+
         <div id="map"></div>
         <script src="/jquery-3.2.1.js"></script>
         <script src="/testmap.js"></script>
