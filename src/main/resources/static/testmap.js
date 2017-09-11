@@ -190,7 +190,7 @@ function getTrueOrFalse(listOfToilets, index, mustPay, isHandicap, hasChangingTa
     google.maps.event.addListener(listOfToilets[index], 'click', function () {
         var checkboxes = document.getElementsByTagName('input');
         for (var i = 0; i < checkboxes.length; i++) {
-            if (checkboxes[i].type == 'checkbox') {
+            if (checkboxes[i].type === 'checkbox') {
 
                 checkboxes[i].checked = false;
             }
