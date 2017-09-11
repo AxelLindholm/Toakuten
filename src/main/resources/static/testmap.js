@@ -159,11 +159,31 @@ function initMap() {
 function bindInfowindowWithMarker(listOfToilets, infowindow, index, response) {
     google.maps.event.addListener(listOfToilets[index], 'click', function () {
         infowindow.open(map, this);
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                var marker2 = new google.maps.Marker({
+                    position: pos,
+                    map: map,
+                    icon: marker(url, s(20, 17), p(10, 8))
+                });
+                map.setCenter(pos);
+            }, function () {
+                handleLocationError(true, infoWindow, map.getCenter());
+            });
+        } else {
+            // If browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+        }
         setTimeout(function () {
             infowindow.close();
         }, 2000);
         $(".address").html('<span>Adress: </span>' + (response[index].address));
         $(".hours").html('<span>Öppettider: </span>' + response[index].hours);
+        $(".destination").html('<a href="http://www.google.com/maps/dir/Current+Location/'+response[index].latitude+','+response[index].longitude+'" target="_blank">Directions</a>');
     });
 }
 function getTrueOrFalse(listOfToilets, index, mustPay, isHandicap, hasChangingTable) {
