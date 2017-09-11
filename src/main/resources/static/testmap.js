@@ -181,9 +181,10 @@ function bindInfowindowWithMarker(listOfToilets, infowindow, index, response) {
         setTimeout(function () {
             infowindow.close();
         }, 2000);
+        $("close").show();
         $(".address").html('<span>Adress: </span>' + (response[index].address));
         $(".hours").html('<span>Öppettider: </span>' + response[index].hours);
-        $(".destination").html('<a href="http://www.google.com/maps/dir/Current+Location/'+response[index].latitude+','+response[index].longitude+'" target="_blank">Directions</a>');
+        $(".destination").html('<a href="http://www.google.com/maps/dir/Current+Location/'+response[index].latitude+','+response[index].longitude+'" target="_blank">Vägbeskrivning</a>');
     });
 }
 function getTrueOrFalse(listOfToilets, index, mustPay, isHandicap, hasChangingTable) {
@@ -241,3 +242,5 @@ function ll(y, x) {
 function marker(url, size, hotspot, origin) {
     return new google.maps.MarkerImage(url, size, origin || p(0, 0), hotspot);
 }
+
+

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:text-decoration="http://www.w3.org/1999/xhtml">
 <head>
     <title>Toakuten</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
@@ -11,14 +11,17 @@
 <div class="main-wrap">
     <!-- Toggle sidebar -->
     <input type="checkbox" id="toggle"/>
+
     <div class="sidebar">
-        <label for="toggle"><span style="visibility:visible">X</span></label>
-        <div class ="Information"></div>
+
+        <label for="toggle"><span id="close">Stäng</span></label>
+
         <div class ="address"></div>
         <div class ="changingtable"></div>
         <div class ="mustpay"></div>
         <div class ="ishandicap"></div>
         <div class ="hours"></div>
+        <br/>
         <a class ="destination"></a>
         <!--<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         <img src="pictures\gruppbild.png" alt="gruppbild"/> -->

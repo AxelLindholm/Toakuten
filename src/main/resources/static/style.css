@@ -125,6 +125,7 @@ footer {
     font-family: Verdana;
     text-align: left;
     -moz-text-size-adjust: auto;
+    padding: 20px;
 }
 .portfolio {
     background-color:#bce3ec;
@@ -140,7 +141,6 @@ footer {
 }
 
 input[type=checkbox] {
-    display:none;
     opacity:0;
 }
 
@@ -154,69 +154,72 @@ input:checked ~ label {
 }
 
 label {
-    z-index:2;
-    position: absolute;
-    top:100px;
+    position: relative;
+    top:160px;
+    color: #01439c;
+    position: relative;
+    text-decoration:underline;
 
     -moz-transition:left 0.5s ease;
     transition:left 0.5s ease;
 }
 /*Layout small screens*/
-@media only screen and (max-width: 750px) {
-
-    body {
-        background-color:#59bbd5;
-        width:100%;
-        position:absolute;
-        top:0;
-        left:0;
-        bottom:0;
-        border-radius:10px;
-        color:#ffffff;
+@media only screen and (max-width: 770px) {
+    .sidebar {
+        background-color: #59bbd5;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        border-radius: 10px;
+        color: #ffffff;
         font-family: Verdana;
         text-align: center;
-        -moz-text-size-adjust: auto;
     }
-    .portfolio {
-        background-color:#bce3ec;
-        position:absolute;
-        top:20%;
-        left:0;
-        right:0;
-        bottom:0;
-        border-radius:10px;
 
-        -moz-transition:left 0.5s ease;
-        transition:left 0.5s ease;
+    .portfolio {
+        background-color: #bce3ec;
+        position: fixed;
+        top: 20%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 10px;
+
+        -moz-transition: left 0.5s ease;
+        transition: left 0.5s ease;
     }
 
     input[type=checkbox] {
-        display:none;
-        opacity:0;
+        opacity: 0;
     }
 
     input:checked ~ .portfolio {
-        top:0;
+        top: 0;
 
     }
 
     input:checked ~ label {
-        top:0;
+        top: 0;
     }
 
     label {
-        z-index:2;
-        position: absolute;
-        top:100px;
+        color: #01439c;
+        position: relative;
+        left:0px;
+        top:110px;
+        text-decoration:underline;
 
-        -moz-transition:left 0.5s ease;
-        transition:left 0.5s ease;
+        -moz-transition: left 0.5s ease;
+        transition: left 0.5s ease;
     }
-    }
-@media only screen and (max-width: 900px) {
+}
+@media only screen and (max-width:950px) {
 
     body {
-        font-size: 12px;
+        font-size: 11px;
     }
 
 }
+a {color: #01439c;}
