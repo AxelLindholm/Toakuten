@@ -170,7 +170,7 @@ filterMarkers = function (category) {
             marker.setVisible(false);
         }
     }
-}
+};
 
 function bindInfowindowWithMarker(listOfToilets, infowindow, index, response) {
     google.maps.event.addListener(listOfToilets[index], 'click', function () {
