@@ -7,6 +7,7 @@ html,body {
     color: #BCE3EC;
 }
 .loader {
+    color: white;
     width: 100px;
     height: 80px;
     font-size: 50px;
@@ -15,6 +16,7 @@ html,body {
     margin: auto;
 }
 .loader .kut {
+    color: white;
     width: 100px;
     height: 160px;
     font-size: 40px;
@@ -24,6 +26,7 @@ html,body {
     opacity: 0;
 }
 .loader span {
+    color: white;
     display: block;
     width: 100%;
     text-align: center;
@@ -32,12 +35,14 @@ html,body {
 }
 
 .loader {
+    color: white;
     position: fixed;
     z-index: 9999;
     background: url('/pictures/kut.gif') no-repeat;
 
 }
 .kut-gif{
+    color: white;
     width: 200px;
     height: 200px;
     position: absolute;

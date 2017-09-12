@@ -15,9 +15,10 @@ function loading(){
 
             if(num == 100) {
                 window.location="/map";
+
             }
             num++;
-        },i*50); //Ändrar hastigheten på räknaren
+        },i*45); //Ändrar hastigheten på räknaren
     };
 
     $(window).load(function() {
