@@ -186,7 +186,7 @@ function bindInfowindowWithMarker(listOfToilets, infowindow, index, response) {
                     map: map,
                     icon: marker(url, s(20, 17), p(10, 8))
                 });
-                map.setCenter(pos);
+                //map.setCenter(pos);
             }, function () {
                 handleLocationError(true, infoWindow, map.getCenter());
             });
@@ -287,6 +287,7 @@ function openCallbackForm() {
     setTimeout(function(){
         $pageBody.on("click", closeCallbackForm);
     }, 50)
+
 }
 
 $popupTrigger.on("click", openCallbackForm);
