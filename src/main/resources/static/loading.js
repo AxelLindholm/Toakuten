@@ -15,7 +15,6 @@ function loading(){
 
             if(num == 100) {
                 window.location="/map";
-//tjoho
             }
             num++;
         },i*50); //Ändrar hastigheten på räknaren
