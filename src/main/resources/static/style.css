@@ -3,7 +3,7 @@
 
 #map {
     max-width: 100%;
-    height: 80%;
+    height: 78%;
 }
 
 /* Responsiva bilder */
@@ -265,4 +265,9 @@ a {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 8;
+}
+.filter{
+    font-family:verdana;
+    font-size:12px;
+    padding:10px;
 }
