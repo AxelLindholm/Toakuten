@@ -18,7 +18,7 @@ function loading(){
 
             }
             num++;
-        },i*120);
+        },i*50); //Ändrar hastigheten på räknaren
     };
 
     $(window).load(function() {
