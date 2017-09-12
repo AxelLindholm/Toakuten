@@ -157,7 +157,7 @@ function initMap() {
     }
 
 }
-
+//Filter markers depending
 filterMarkers = function (category) {
     for (i = 0; i < toiletList.length; i++) {
         marker = toiletList[i];
