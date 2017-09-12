@@ -242,5 +242,37 @@ function ll(y, x) {
 function marker(url, size, hotspot, origin) {
     return new google.maps.MarkerImage(url, size, origin || p(0, 0), hotspot);
 }
+// Pop-up
+var $pageBody = $("body"),
+    $popupTrigger = $(".popup-trigger"),
+    $popupTarget = $(".popup"),
+    $closeTrigger = $popupTarget.find(".close-trigger");
+
+$popupTarget.hide();
+
+function closeCallbackForm(e) {
+    var $target = $(e.target),
+        closeButton = $target.hasClass("close-trigger"),
+        popup = $target.closest($popupTarget[0]).length,
+        closeCondition = !popup || closeButton;
+    if ( closeCondition ) {
+        $pageBody.removeClass("body-lightbox");
+        $popupTarget.hide();
+        $pageBody.off("click", closeCallbackForm);
+        $closeTrigger.off("click", closeCallbackForm);
+    }
+}
+
+function openCallbackForm() {
+    $pageBody.addClass("body-lightbox");
+    $popupTarget.show();
+    $closeTrigger.on("click", closeCallbackForm);
+
+    setTimeout(function(){
+        $pageBody.on("click", closeCallbackForm);
+    }, 50)
+}
+
+$popupTrigger.on("click", openCallbackForm);
 
 

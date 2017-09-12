@@ -14,24 +14,34 @@
 
 
 <div class="main-wrap">
+
     <!-- Toggle sidebar -->
     <input type="checkbox" id="toggle"/>
 
     <div class="sidebar">
-        <label for="toggle"><span id="close">Stäng</span></label>
+        <label for="toggle"><span id="close"><img src="\pictures\Stäng.png"/></span></label>
 
-        <div class ="address"></div>
-        <div class ="changingtable"></div>
-        <div class ="mustpay"></div>
-        <div class ="ishandicap"></div>
-        <div class ="hours"></div>
         <br/>
-        <a class ="destination"></a>
+        <div class="address"></div>
+        <div class="changingtable"></div>
+        <div class="mustpay"></div>
+        <div class="ishandicap"></div>
+        <div class="hours"></div>
+        <br/>
+        <a class="destination"></a>
+        <!-- Pop-up -->
+        <div class="popup">
+            <h1>Om oss</h1>
+            <p>Vi är ett glatt gäng bla bla bla.
+                <br/><br/>
+                <img src="pictures\gruppbild.png" alt="gruppbild"/></p>
 
-        <!--<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-        <img src="pictures\gruppbild.png" alt="gruppbild"/> -->
 
-        <!-- /wrapper -->
+            <button class="close-trigger">Stäng</button>
+        </div>
+        <div class="content">
+            <button class="popup-trigger">Om oss</button>
+        </div>
     </div>
     <div class="portfolio">
 
@@ -50,6 +60,7 @@
 
     </div>
 </div>
+
 </body>
 </html>
 
