@@ -184,7 +184,7 @@ function bindInfowindowWithMarker(listOfToilets, infowindow, index, response) {
         $("close").show();
         $(".address").html('<span>Adress: </span>' + (response[index].address));
         $(".hours").html('<span>Öppettider: </span>' + response[index].hours);
-        $(".destination").html('<a href="http://www.google.com/maps/dir/Current+Location/'+response[index].latitude+','+response[index].longitude+'" target="_blank">Vägbeskrivning</a>');
+        $(".destination").html('<a href="http://www.google.com/maps/dir/Current+Location/'+response[index].latitude+','+response[index].longitude+'" target="_blank">Hitta dit</a>');
     });
 }
 function getTrueOrFalse(listOfToilets, index, mustPay, isHandicap, hasChangingTable) {
