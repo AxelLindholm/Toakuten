@@ -2,7 +2,7 @@
  * element that contains the map. */
 
 #map {
-    max-width: 100%;
+    max-width: 200%;
     height: 78%;
 }
 
@@ -133,7 +133,6 @@ footer {
     right: 0;
     bottom: 0;
     border-radius: 10px;
-
     -moz-transition: left 0.5s ease;
     transition: left 0.5s ease;
 }
