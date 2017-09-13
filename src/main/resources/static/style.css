@@ -68,8 +68,6 @@ html, body {
     }
 }
 
-/*Screen size setup*/
-
 /* Dekor */
 body {
     margin: 0;
@@ -226,7 +224,6 @@ label {
 a {
     color: #01439c;
 }
-
 @media only screen and (max-width: 500px) {
 
     body {
@@ -276,4 +273,8 @@ a {
     font-family:verdana;
     font-size:12px;
     padding:10px;
+}
+.toabild {
+    height: auto;
+    width: 20%;
 }
