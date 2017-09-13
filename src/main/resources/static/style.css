@@ -232,7 +232,8 @@ a {
 @media only screen and (max-width: 400px) {
 
     body {
-        top: 25%;
+        top: 30%;
+        font-size: 7px;
     }
 }
 
