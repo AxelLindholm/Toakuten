@@ -9,25 +9,25 @@ function initMap() {
             icon: 'pictures\\0.png'
         },
         three: {
-            icon: 'pictures\\1.png'
-        },
-        five: {
             icon: 'pictures\\3.png'
         },
-        seven: {
-            icon: 'pictures\\4.png'
-        },
-        eight: {
+        five: {
             icon: 'pictures\\5.png'
         },
-        ten: {
-            icon: 'pictures\\6.png'
+        seven: {
+            icon: 'pictures\\7.png'
         },
-        twelve: {
+        eight: {
             icon: 'pictures\\8.png'
         },
+        ten: {
+            icon: 'pictures\\10.png'
+        },
+        twelve: {
+            icon: 'pictures\\12.png'
+        },
         fifteen: {
-            icon: 'pictures\\9.png'
+            icon: 'pictures\\15.png'
         },
         broken: {
             icon: 'pictures\\trasig.png'
