@@ -233,6 +233,12 @@ a {
         font-size: 8px;
     }
 }
+@media only screen and (max-width: 400px) {
+
+    body {
+        top: 25%;
+    }
+}
 
 a {
     color: black;
