@@ -8,25 +8,25 @@ function initMap() {
         zero: {
             icon: 'pictures\\0.png'
         },
-        one: {
+        three: {
             icon: 'pictures\\1.png'
         },
-        three: {
+        five: {
             icon: 'pictures\\3.png'
         },
-        four: {
+        seven: {
             icon: 'pictures\\4.png'
         },
-        five: {
+        eight: {
             icon: 'pictures\\5.png'
         },
-        six: {
+        ten: {
             icon: 'pictures\\6.png'
         },
-        eight: {
+        twelve: {
             icon: 'pictures\\8.png'
         },
-        nine: {
+        fifteen: {
             icon: 'pictures\\9.png'
         },
         broken: {
@@ -57,57 +57,57 @@ function initMap() {
                 switch (count) {
                     case 0:
                         toiletIcon = icons.zero.icon;
-                        changingTable = false;
-                        mustPay = false;
                         isHandicap = false;
-                        break;
-                    case 1:
-                        toiletIcon = icons.one.icon;
                         changingTable = false;
                         mustPay = false;
-                        isHandicap = true;
                         break;
                     case 3:
                         toiletIcon = icons.three.icon;
-                        changingTable = true;
-                        mustPay = false;
-                        isHandicap = false;
-                        break;
-                    case 4:
-                        toiletIcon = icons.four.icon;
-                        changingTable = true;
-                        mustPay = false;
                         isHandicap = true;
+                        changingTable = false;
+                        mustPay = false;
                         break;
                     case 5:
                         toiletIcon = icons.five.icon;
-                        changingTable = false;
-                        mustPay = true;
                         isHandicap = false;
+                        changingTable = true;
+                        mustPay = false;
                         break;
-                    case 6:
-                        toiletIcon = icons.six.icon;
+                    case 7:
+                        toiletIcon = icons.seven.icon;
+                        isHandicap = false;
                         changingTable = false;
                         mustPay = true;
-                        isHandicap = true;
                         break;
                     case 8:
                         toiletIcon = icons.eight.icon;
-                        changingTable = true;
-                        mustPay = true;
-                        isHandicap = false;
-                        break;
-                    case 9:
-                        toiletIcon = icons.nine.icon;
-                        changingTable = true;
-                        mustPay = true;
                         isHandicap = true;
+                        changingTable = true;
+                        mustPay = false;
+                        break;
+                    case 10:
+                        toiletIcon = icons.ten.icon;
+                        isHandicap = true;
+                        changingTable = false;
+                        mustPay = true;
+                        break;
+                    case 12:
+                        toiletIcon = icons.twelve.icon;
+                        isHandicap = false;
+                        changingTable = true;
+                        mustPay = true;
+                        break;
+                    case 15:
+                        toiletIcon = icons.fifteen.icon;
+                        isHandicap = true;
+                        changingTable = true;
+                        mustPay = true;
                         break;
                     default:
                         toiletIcon = icons.broken.icon;
+                        isHandicap = false;
                         changingTable = false;
                         mustPay = false;
-                        isHandicap = false;
                 }
                 toiletList.push(new google.maps.Marker({
                     title: response[i].address,
