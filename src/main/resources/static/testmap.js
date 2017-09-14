@@ -215,13 +215,13 @@ function getTrueOrFalse(listOfToilets, index, mustPay, isHandicap, hasChangingTa
                     infowindow.open(map, this);
                     setTimeout(function () {
                         infowindow.close();
-                    }, 2000);
+                    }, 1500);
                 } else if(checkboxes[i].checked === false && currentAddress !== this.title) {
                     infowindow.open(map, this);
                     currentAddress = response[index].address;
                     setTimeout(function () {
                         infowindow.close();
-                    }, 2000);
+                    }, 1500);
                 } else {
                     checkboxes[i].checked = true;
                 }
